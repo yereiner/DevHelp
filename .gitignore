@@ -1,0 +1,21 @@
+# Python: Archivos de optimización y compilación
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales (el que creaste hoy)
+venv/
+env/
+ENV/
+
+# Información de instalación y paquetes
+*.egg-info/
+build/
+dist/
+
+# Archivos temporales de editores y sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
