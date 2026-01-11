@@ -1,0 +1,43 @@
+{
+  "language": "Python",
+  "type": "function",
+  "name": "range",
+  "description": "Genera una secuencia de números.",
+  "syntax": "range(inicio, fin, paso)",
+  "parameters": [
+    {
+      "name": "inicio",
+      "type": "int",
+      "description": "Número inicial de la secuencia.",
+      "optional": true
+    },
+    {
+      "name": "fin",
+      "type": "int",
+      "description": "Número final (no incluido).",
+      "optional": false
+    },
+    {
+      "name": "paso",
+      "type": "int",
+      "description": "Incremento entre cada número.",
+      "optional": true
+    }
+  ],
+  "examples": [
+    {
+      "description": "Uso básico",
+      "code": "for i in range(5):\n    print(i)"
+    },
+    {
+      "description": "Usando inicio y paso",
+      "code": "for i in range(2, 10, 2):\n    print(i)"
+    }
+  ],
+  "common_errors": [
+    {
+      "error": "TypeError",
+      "reason": "Usar valores float en lugar de int."
+    }
+  ]
+}
