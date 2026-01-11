@@ -1,4 +1,4 @@
-from core.loader import cargar_json 
+from src.loader import cargar_json 
 import os 
 
 def buscar(lenguaje, termino):
