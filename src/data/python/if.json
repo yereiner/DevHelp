@@ -1,0 +1,31 @@
+{
+  "language": "Python",
+  "type": "keyword",
+  "name": "if",
+  "description": "Controla el flujo de ejecución evaluando una condición lógica.",
+  "syntax": "if condicion:",
+  "parameters": [
+    {
+      "name": "condicion",
+      "type": "boolean",
+      "description": "Expresión que se evalúa como verdadera o falsa.",
+      "optional": false
+    }
+  ],
+  "examples": [
+    {
+      "description": "Condicional básico con else",
+      "code": "x = 10\nif x > 5:\n    print('Es mayor')\nelse:\n    print('Es menor')"
+    }
+  ],
+  "common_errors": [
+    {
+      "error": "SyntaxError",
+      "reason": "Olvidar los dos puntos (:) después de la condición."
+    },
+    {
+      "error": "NameError",
+      "reason": "Intentar comparar variables que no han sido declaradas."
+    }
+  ]
+}
