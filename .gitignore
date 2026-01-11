@@ -4,7 +4,7 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Entornos virtuales (el que creaste hoy)
+# Entornos virtuales (el que cree hoy)
 venv/
 env/
 ENV/
