@@ -1,0 +1,28 @@
+
+# DevHelp
+
+**DevHelp** ayuda a los desarrolladores principiantes o incluso avanzados a repasar entender y mejorar,
+el codigo a usar mejores practicas con ejemplos y descripciones detalladas de funciones de el lenguaje, typado, entre otras
+te enzeña desde lo mas basico hasta lo mas avanzado y lo mejor es offline y local pareciera ia pero no solo es logica
+esto te ayudara mucho y mas si no quieres depender mucho de que te den las soluciones la ia sino de que tu mismo encuentres la 
+solucion con esta herramienta.
+
+---
+
+## INSTALACION
+```bash
+git clone https://github.com/yereiner/DevHelp.git
+cd DevHelp
+pip install -r requirements.txt
+pip install -e .
+```
+---
+
+## Uso
+```bash
+python3 -m src.main
+```
+---
+
+
+## Documentacion
