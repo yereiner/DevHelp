@@ -3,12 +3,15 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "DevHelp"
-description = "Dev Help,it helps developers learn and improve their skills"
-requires-python = ">=3.10"
+name = "devhelp"
+version = "0.1.0"
+description = "CLI para consulta de documentación técnica"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+devhelp = "src.main:main"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
-
-[tool.setuptools.packages.find]
-where = ["src"]
+packages = ["src"]
