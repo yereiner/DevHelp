@@ -1,19 +1,22 @@
-
 # src/main.py
 from src.search import buscar
 from src.display import imprimir
 
 def main():
-    # Simulamos que el usuario pidió documentación de "range" en "python"
-    lenguaje = "python"
-    termino = "range"
+    print("--- Bienvenido a DevHelp CLI ---")
     
-    print(f"🔍 Buscando '{termino}' en {lenguaje}...")
+    # Pedimos los datos al usuario
+    lenguaje = input("¿Qué lenguaje quieres consultar? (ej. python): ").strip()
+    termino = input(f"¿Qué término de {lenguaje} buscas? (ej. range): ").strip()
     
-    # 1. Buscamos los datos (esto usa search.py)
+    if not lenguaje or not termino:
+        print("Error: Debes ingresar tanto el lenguaje como el término.")
+        return
+
+    print(f"\n🔍 Buscando '{termino}' en {lenguaje}...")
+    
+    # Buscamos y mostramos
     resultado = buscar(lenguaje, termino)
-    
-    # 2. Imprimimos los datos 
     imprimir(resultado)
 
 if __name__ == "__main__":
