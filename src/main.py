@@ -1,22 +1,25 @@
-# src/main.py
+import argparse
 from src.search import buscar
 from src.display import imprimir
 
 def main():
-    print("--- Bienvenido a DevHelp CLI ---")
-    
-    # Pedimos los datos al usuario
-    lenguaje = input("¿Qué lenguaje quieres consultar? (ej. python): ").strip()
-    termino = input(f"¿Qué término de {lenguaje} buscas? (ej. range): ").strip()
-    
-    if not lenguaje or not termino:
-        print("Error: Debes ingresar tanto el lenguaje como el término.")
-        return
+    # 1. Creamos el manejador de argumentos
+    parser = argparse.ArgumentParser(
+        description="DevHelp: Consulta documentación de programación desde la terminal."
+    )
 
-    print(f"\n🔍 Buscando '{termino}' en {lenguaje}...")
+    # 2. Definimos qué argumentos esperamos
+    # Argumentos posicionales (obligatorios en este orden)
+    parser.add_argument("lenguaje", help="El lenguaje de programación (ej: python, js)")
+    parser.add_argument("termino", help="El comando o función a buscar (ej: range, print)")
+
+    # 3. Procesamos los argumentos que el usuario escribió
+    args = parser.parse_args()
+
+    # 4. Usamos los datos
+    print(f"🔍 Buscando '{args.termino}' en {args.lenguaje}...")
     
-    # Buscamos y mostramos
-    resultado = buscar(lenguaje, termino)
+    resultado = buscar(args.lenguaje, args.termino)
     imprimir(resultado)
 
 if __name__ == "__main__":
