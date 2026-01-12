@@ -1,0 +1,16 @@
+[
+  {
+    "language": "Python",
+    "name": "dict",
+    "description": "📖 [bold]¿Qué es?[/bold] Funciona exactamente como un diccionario real o una agenda. No buscas por número, sino por un 'nombre' (clave) para encontrar su 'significado' (valor).",
+    "syntax": "mi_dict = {'clave': 'valor'}",
+    "examples": [{ "description": "Crear un contacto", "code": "usuario = {'nombre': 'Yereiner', 'puntos': 100}\nprint(usuario['nombre'])" }]
+  },
+  {
+    "language": "Python",
+    "name": "get",
+    "description": "🔍 [bold]¿Qué es?[/bold] Es la forma educada de buscar en un diccionario. Si pides algo que no existe, en lugar de romper el programa, te responde amablemente 'No lo encontré'.",
+    "syntax": "diccionario.get('clave', 'mensaje_error')",
+    "examples": [{ "description": "Buscar con seguridad", "code": "precios = {'pan': 10}\nprint(precios.get('leche', 'No hay ese producto'))" }]
+  }
+]

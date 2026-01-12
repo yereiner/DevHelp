@@ -1,0 +1,16 @@
+[
+  {
+    "language": "Python",
+    "name": "for",
+    "description": "🔄 [bold]¿Qué es?[/bold] Es un trabajador incansable. Imagina que tienes una fila de cajas y quieres ver qué hay dentro de cada una; el 'for' va una por una hasta que termina la fila.\n\n📖 [bold]¿Cómo se lee?[/bold] 'Para cada elemento en esta lista, haz lo siguiente...'",
+    "syntax": "for variable in lista_o_rango:",
+    "examples": [{ "description": "Saludar a una lista de amigos", "code": "amigos = ['Ana', 'Beto', 'Carla']\nfor persona in amigos:\n    print('Hola ' + persona)" }]
+  },
+  {
+    "language": "Python",
+    "name": "while",
+    "description": "🔁 [bold]¿Qué es?[/bold] Es como un guardia de seguridad. Te deja pasar (repite el código) MIENTRAS una condición sea verdad. En cuanto la condición es mentira, se detiene.",
+    "syntax": "while condicion == True:",
+    "examples": [{ "description": "Cuenta regresiva", "code": "energia = 3\nwhile energia > 0:\n    print('Batería al ' + str(energia))\n    energia = energia - 1\nprint('¡Se apagó!')" }]
+  }
+]

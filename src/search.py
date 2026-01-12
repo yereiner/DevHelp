@@ -1,49 +1,48 @@
 import os
-from src.loader import cargar_json
+import sqlite3
+import difflib
+
+# Ruta a la base de datos (subiendo desde src/ a la raíz)
+DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "devhelp.db")
 
 def buscar(lenguaje, termino):
-    lenguaje = lenguaje.lower()
-    termino = termino.lower()
-
-    # Obtenemos la ruta donde vive este archivo para que sea escalable
-    base_dir = os.path.dirname(__file__) 
-    
-    # Construimos la ruta hacia la carpeta data
-    ruta_relativa = os.path.join(base_dir, "data", lenguaje, f"{termino}.json")
-
-    try:
-        datos = cargar_json(ruta_relativa)
-        return datos
-    except FileNotFoundError:
-        return None
-
-def listar_terminos(lenguaje):
     """
-    Escanea la carpeta del lenguaje y devuelve los nombres de los archivos JSON.
-    Esto permite que el programa le diga al usuario qué puede buscar.
+    Busca un término en la base de datos. 
+    Retorna (datos, sugerencia)
     """
-    base_dir = os.path.dirname(__file__)
-    # Buscamos en src/data/<lenguaje>
-    ruta_lenguaje = os.path.join(base_dir, "data", lenguaje.lower())
-    
-    # Verificamos si la carpeta del lenguaje existe
-    if not os.path.exists(ruta_lenguaje):
-        return []
-    
-    # Listamos archivos .json y les quitamos la extensión .json para mostrarlos
-    archivos = [f.replace('.json', '') for f in os.listdir(ruta_lenguaje) if f.endswith('.json')]
-    return sorted(archivos)
+    termino = termino.lower().strip()
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
 
-def listar_lenguajes():
-    """
-    Devuelve una lista de todas las carpetas dentro de 'data'.
-    Útil para el saludo inicial del programa.
-    """
-    base_dir = os.path.dirname(__file__)
-    ruta_data = os.path.join(base_dir, "data")
+    # 1. Intento de búsqueda exacta
+    cursor.execute("SELECT term, definition, example FROM docs WHERE term = ?", (termino,))
+    resultado = cursor.fetchone()
+
+    if resultado:
+        conn.close()
+        # Retornamos los datos en el formato que espera tu display.py
+        return {
+            "name": resultado[0],
+            "description": resultado[1],
+            "examples": [{"code": resultado[2]}]
+        }, None
+
+    # 2. Si no hay éxito, buscamos la palabra más parecida (Sugerencia)
+    cursor.execute("SELECT term FROM docs")
+    todos_los_terminos = [fila[0] for fila in cursor.fetchall()]
+    conn.close()
+
+    # Buscamos la coincidencia más cercana (60% de similitud mínima)
+    coincidencias = difflib.get_close_matches(termino, todos_los_terminos, n=1, cutoff=0.6)
     
-    if not os.path.exists(ruta_data):
-        return []
-        
-    # Listamos solo los directorios dentro de data/
-    return [d for d in os.listdir(ruta_data) if os.path.isdir(os.path.join(ruta_data, d))]
+    sugerencia = coincidencias[0] if coincidencias else None
+    return None, sugerencia
+
+def listar_terminos(lenguaje=None):
+    """Devuelve todos los términos guardados en la DB"""
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute("SELECT term FROM docs")
+    terminos = [fila[0] for fila in cursor.fetchall()]
+    conn.close()
+    return sorted(terminos)

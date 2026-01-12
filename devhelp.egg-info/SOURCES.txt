@@ -7,7 +7,9 @@ devhelp.egg-info/dependency_links.txt
 devhelp.egg-info/entry_points.txt
 devhelp.egg-info/top_level.txt
 src/__init__.py
+src/database.py
 src/display.py
 src/loader.py
 src/main.py
+src/migrar_datos.py
 src/search.py

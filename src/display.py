@@ -1,48 +1,57 @@
-from src.search import buscar
 import os
+from rich.console import Console
+from rich.panel import Panel
+from rich.table import Table
+from rich.text import Text
+
+console = Console()
 
 def imprimir(datos):
     if not datos:
-        print("\n[!] No se encontró información para ese término.")
+        console.print("\n[bold red][!] No se encontró información para ese término.[/bold red]")
         return
 
-    # Limpiar pantalla
-    os.system('cls' if os.name == 'nt' else 'clear')
+    # Limpiar pantalla (opcional, tú decides si quieres mantenerlo)
+    # os.system('cls' if os.name == 'nt' else 'clear')
 
-    # Colores básicos (opcional, funcionan en la mayoría de terminales modernas)
-    RED = '\033[91m'
-    RESET = '\033[0m'
-    BOLD = '\033[1m'
+    nombre = datos.get('name', 'N/A').upper()
+    descripcion = datos.get('description', 'Sin descripción')
+    sintaxis = datos.get('syntax', 'N/A')
 
-    print("=" * 60)
-    print(f"{BOLD}  DOCUMENTACIÓN DE: {datos.get('name', 'N/A').upper()}{RESET}")
-    print("=" * 60)
+    # Encabezado
+    console.print(f"\n[bold cyan]🔍 DOCUMENTACIÓN: {nombre} (PYTHON)[/bold cyan]")
 
-    print(f"\n📌 {BOLD}Descripción:{RESET} {datos.get('description', 'Sin descripción')}")
-    print(f"💻 {BOLD}Sintaxis:{RESET} {datos.get('syntax', 'N/A')}")
+    # Panel de Información Principal
+    info_principal = f"{descripcion}\n\n[bold yellow]Sintaxis:[/bold yellow] [green]{sintaxis}[/green]"
+    console.print(Panel(info_principal, border_style="bright_blue", title="Descripción General"))
 
-    # Parámetros
+    # Sección de Parámetros (usando una tablita para que se vea Pro)
     parametros = datos.get('parameters', [])
     if parametros:
-        print(f"\n🔹 {BOLD}Parámetros:{RESET}")
+        tabla = Table(title="🔹 Parámetros", show_header=True, header_style="bold magenta")
+        tabla.add_column("Nombre", style="dim")
+        tabla.add_column("Tipo")
+        tabla.add_column("Descripción")
         for p in parametros:
-            opcional = "(Opcional)" if p.get('optional') else "(Requerido)"
-            print(f"  - {p['name']} ({p['type']}): {p['description']} {opcional}")
+            opcional = "[dim](Opcional)[/dim]" if p.get('optional') else "[bold red](Requerido)[/bold red]"
+            tabla.add_row(p['name'], p['type'], f"{p['description']} {opcional}")
+        console.print(tabla)
 
-    # Ejemplos
+    # Sección de Ejemplos
     ejemplos = datos.get('examples', [])
     if ejemplos:
-        print(f"\n🚀 {BOLD}Ejemplos de uso:{RESET}")
         for ej in ejemplos:
-            print(f"  # {ej['description']}")
-            print(f"  {ej['code']}")
-            print("-" * 20)
+            contenido_ej = f"[dim]# {ej['description']}[/dim]\n{ej['code']}"
+            console.print(Panel(contenido_ej, title="🚀 Ejemplo de uso", border_style="green"))
 
-    # --- NUEVA SECCIÓN: ERRORES COMUNES ---
+    # Sección de Errores Comunes
     errores = datos.get('common_errors', [])
     if errores:
-        print(f"\n⚠️  {RED}{BOLD}ERRORES COMUNES:{RESET}")
+        error_text = Text()
         for err in errores:
-            print(f"  • {BOLD}{err['error']}{RESET}: {err['reason']}")
+            error_text.append(f"• {err['error']}: ", style="bold red")
+            error_text.append(f"{err['reason']}\n", style="white")
+        
+        console.print(Panel(error_text, title="⚠️ ERRORES COMUNES", border_style="red"))
 
-    print("\n" + "=" * 60)
+    console.print("=" * 60 + "\n")

@@ -6,14 +6,21 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def cargar_json(ruta_relativa):
     """
-    Carga un archivo JSON y devuelve su contenido como diccionario.
-    
-    :param ruta_relativa: Ruta relativa desde la raíz del proyecto
-    :return: dict con la información del JSON
+    Carga un archivo JSON de forma segura.
     """
+    # Si la ruta ya es absoluta, os.path.join la respetará
     ruta_completa = os.path.join(BASE_DIR, ruta_relativa)
 
-    with open(ruta_completa, "r", encoding="utf-8") as archivo:
-        informacion = json.load(archivo)
+    if not os.path.exists(ruta_completa):
+        # En lugar de romper, devolvemos None para que el migrador lo ignore
+        return None
 
-    return informacion
+    try:
+        with open(ruta_completa, "r", encoding="utf-8") as archivo:
+            return json.load(archivo)
+    except json.JSONDecodeError:
+        print(f"⚠️ Error: El archivo {ruta_relativa} tiene un formato JSON inválido.")
+        return None
+    except Exception as e:
+        print(f"⚠️ Error inesperado al cargar {ruta_relativa}: {e}")
+        return None

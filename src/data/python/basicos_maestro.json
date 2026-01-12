@@ -1,0 +1,31 @@
+[
+  {
+    "language": "Python",
+    "name": "def",
+    "description": "💡 [bold]¿Qué es?[/bold] Es como una receta de cocina. Con 'def' guardas un grupo de pasos bajo un nombre para usarlos cuando quieras.\n\n📖 [bold]¿Cómo se lee?[/bold] 'Definir la función llamada X'.",
+    "syntax": "def nombre_de_tu_accion():",
+    "examples": [{ "description": "Crear un saludo", "code": "def saludar():\n    print('¡Hola!')\n\nsaludar()" }],
+    "common_errors": [{ "error": "Olvidar los dos puntos (:)", "reason": "Python los necesita al final de la línea de 'def'." }]
+  },
+  {
+    "language": "Python",
+    "name": "print",
+    "description": "📢 [bold]¿Qué es?[/bold] Es el megáfono de Python. Sirve para que el programa te hable y te muestre qué está pasando por dentro.",
+    "syntax": "print(lo_que_quieres_decir)",
+    "examples": [{ "description": "Saludar al mundo", "code": "print('¡Hola! Estoy aprendiendo Python')" }]
+  },
+  {
+    "language": "Python",
+    "name": "len",
+    "description": "📏 [bold]¿Qué es?[/bold] Es una cinta métrica. Te dice cuántas letras tiene una palabra o cuántos objetos hay dentro de una lista.",
+    "syntax": "len(objeto_a_medir)",
+    "examples": [{ "description": "Contar elementos", "code": "frutas = ['pera', 'uva']\nprint(len(frutas)) # Muestra 2" }]
+  },
+  {
+    "language": "Python",
+    "name": "if",
+    "description": "🚦 [bold]¿Qué es?[/bold] Es un semáforo. Si algo es verdad, el código pasa; si no, se detiene o busca otro camino.",
+    "syntax": "if condicion:",
+    "examples": [{ "description": "Chequear edad", "code": "edad = 20\nif edad >= 18:\n    print('Es mayor')" }]
+  }
+]

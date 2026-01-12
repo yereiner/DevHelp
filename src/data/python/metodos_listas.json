@@ -1,0 +1,27 @@
+[
+  {
+    "language": "Python",
+    "name": "append",
+    "description": "Agrega un ítem al final de la lista.",
+    "syntax": "lista.append(x)",
+    "parameters": [{ "name": "x", "type": "any", "description": "El elemento a agregar.", "optional": false }],
+    "examples": [{ "description": "Agregar número", "code": "nums = [1, 2]\nnums.append(3)\nprint(nums)" }]
+  },
+  {
+    "language": "Python",
+    "name": "pop",
+    "description": "Elimina y devuelve el elemento en la posición dada.",
+    "syntax": "lista.pop([i])",
+    "parameters": [{ "name": "i", "type": "int", "description": "Índice del elemento a eliminar.", "optional": true }],
+    "examples": [{ "description": "Eliminar último", "code": "nums = [10, 20, 30]\nultimo = nums.pop()\nprint(ultimo) # 30" }],
+    "common_errors": [{ "error": "IndexError", "reason": "La lista está vacía o el índice está fuera de rango." }]
+  },
+  {
+    "language": "Python",
+    "name": "extend",
+    "description": "Extiende la lista agregando todos los ítems del iterable.",
+    "syntax": "lista.extend(iterable)",
+    "parameters": [{ "name": "iterable", "type": "iterable", "description": "Colección de elementos a añadir.", "optional": false }],
+    "examples": [{ "description": "Unir listas", "code": "a = [1, 2]\na.extend([3, 4])\nprint(a) # [1, 2, 3, 4]" }]
+  }
+]

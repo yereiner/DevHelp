@@ -1,0 +1,23 @@
+[
+  {
+    "language": "Python",
+    "name": "split",
+    "description": "✂️ [bold]¿Qué es?[/bold] Imagina que tienes una oración y quieres separar cada palabra. Es como usar unas tijeras para cortar un texto cada vez que encuentre un espacio o una coma.",
+    "syntax": "texto.split('separador')",
+    "examples": [{ "description": "Separar palabras", "code": "frase = 'Hola Mundo'\npalabras = frase.split(' ')\nprint(palabras) # ['Hola', 'Mundo']" }]
+  },
+  {
+    "language": "Python",
+    "name": "upper",
+    "description": "📢 [bold]¿Qué es?[/bold] ¡Es el botón de gritar! Convierte todas las letras de un texto a MAYÚSCULAS.",
+    "syntax": "texto.upper()",
+    "examples": [{ "description": "Convertir a mayúsculas", "code": "nombre = 'yereiner'\nprint(nombre.upper()) # YEREINER" }]
+  },
+  {
+    "language": "Python",
+    "name": "join",
+    "description": "🔗 [bold]¿Qué es?[/bold] Es el pegamento de los textos. Toma una lista de palabras y las une todas en una sola frase usando el símbolo que tú elijas.",
+    "syntax": "'pegamento'.join(lista)",
+    "examples": [{ "description": "Unir con guiones", "code": "partes = ['2026', '01', '12']\nfecha = '-'.join(partes)\nprint(fecha) # 2026-01-12" }]
+  }
+]

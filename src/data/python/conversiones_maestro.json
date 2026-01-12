@@ -1,0 +1,17 @@
+[
+  {
+    "language": "Python",
+    "name": "int",
+    "description": "🔢 [bold]¿Qué es?[/bold] Es un transformador. Toma un texto que parece número (como '10') y lo convierte en un número real para poder sumar o restar.",
+    "syntax": "int(texto_o_decimal)",
+    "examples": [{ "description": "De texto a número", "code": "edad = int('25')\nprint(edad + 1) # 26" }],
+    "common_errors": [{ "error": "ValueError", "reason": "Intentar convertir algo que no es un número, como int('Hola')." }]
+  },
+  {
+    "language": "Python",
+    "name": "str",
+    "description": "🔤 [bold]¿Qué es?[/bold] Convierte cualquier cosa en texto. Útil cuando quieres pegar un número a una frase.",
+    "syntax": "str(valor)",
+    "examples": [{ "description": "Pegar número a texto", "code": "puntos = 10\nprint('Tienes ' + str(puntos) + ' pts')" }]
+  }
+]
