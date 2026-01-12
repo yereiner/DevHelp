@@ -1,0 +1,16 @@
+[
+  {
+    "name": "class",
+    "language": "Python",
+    "description": "🏗️ ¿Qué es? Es un molde de galletas. Define la forma (propiedades) y qué puede hacer (métodos) cada galleta que crees con él.",
+    "syntax": "class Molde:\n    # características",
+    "examples": [{"description": "Crear un molde de Coche", "code": "class Coche:\n    ruedas = 4\n\nmi_carro = Coche()"}]
+  },
+  {
+    "name": "self",
+    "language": "Python",
+    "description": "🪞 ¿Qué es? Significa 'yo mismo'. Es la forma en que el objeto se mira al espejo para acceder a sus propias cosas.",
+    "syntax": "self.mi_caracteristica",
+    "examples": [{"description": "Usar self para el nombre", "code": "def __init__(self, nombre):\n    self.nombre = nombre"}]
+  }
+]

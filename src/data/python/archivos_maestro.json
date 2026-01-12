@@ -1,0 +1,12 @@
+[
+  {
+    "name": "with open",
+    "language": "Python",
+    "description": "📂 ¿Qué es? Es como abrir un cajón para leer o guardar papeles. El 'with' asegura que, cuando termines, el cajón se cierre bajo llave automáticamente.",
+    "syntax": "with open('archivo.txt', 'modo') as f:",
+    "parameters": [
+      {"name": "mode", "type": "str", "description": "'r' para leer, 'w' para escribir desde cero.", "optional": true}
+    ],
+    "examples": [{"description": "Guardar un secreto", "code": "with open('secreto.txt', 'w') as f:\n    f.write('¡Aprendiendo Python!')"}]
+  }
+]

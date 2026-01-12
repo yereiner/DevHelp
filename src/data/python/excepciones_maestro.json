@@ -1,0 +1,9 @@
+[
+  {
+    "name": "try-except",
+    "language": "Python",
+    "description": "🩹 ¿Qué es? Es un 'kit de primeros auxilios'. Intentas algo que podría romperse (try) y preparas la venda por si ocurre el accidente (except).",
+    "syntax": "try:\n    # acción arriesgada\nexcept Error:\n    # plan B",
+    "examples": [{"description": "Manejar división por cero", "code": "try:\n    resultado = 10 / 0\nexcept ZeroDivisionError:\n    print('¡No puedes dividir por cero!')"}]
+  }
+]

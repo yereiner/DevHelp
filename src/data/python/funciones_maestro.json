@@ -1,0 +1,16 @@
+[
+  {
+    "name": "def",
+    "language": "Python",
+    "description": "🧑‍🍳 ¿Qué es? Es como escribir una receta. Guardas los pasos una sola vez y los 'cocinas' (llamas) cada vez que tengas hambre de ese código.",
+    "syntax": "def nombre_receta(ingredientes):\n    # pasos a seguir",
+    "examples": [{"description": "Receta de saludo", "code": "def saludar(nombre):\n    print(f'¡Hola {nombre}!')"}]
+  },
+  {
+    "name": "return",
+    "language": "Python",
+    "description": "📦 ¿Qué es? Es el resultado final de la receta. La función termina su trabajo y te 'entrega' el paquete.",
+    "syntax": "return resultado",
+    "examples": [{"description": "Entregar una suma", "code": "def sumar(a, b):\n    return a + b"}]
+  }
+]
