@@ -2,7 +2,7 @@ Metadata-Version: 2.4
 Name: devhelp
 Version: 0.1.0
 Summary: CLI para consulta de documentación técnica
-Requires-Python: >=3.6
+Requires-Python: >=3.7
 Description-Content-Type: text/markdown
 Dynamic: requires-python
 

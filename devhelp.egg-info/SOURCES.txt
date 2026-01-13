@@ -1,6 +1,8 @@
+MANIFEST.in
 README.md
 pyproject.toml
 setup.py
+data/devhelp.db
 devhelp.egg-info/PKG-INFO
 devhelp.egg-info/SOURCES.txt
 devhelp.egg-info/dependency_links.txt
