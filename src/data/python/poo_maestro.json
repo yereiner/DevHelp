@@ -2,15 +2,23 @@
   {
     "name": "class",
     "language": "Python",
-    "description": "🏗️ ¿Qué es? Es un molde de galletas. Define la forma (propiedades) y qué puede hacer (métodos) cada galleta que crees con él.",
+    "description": "🏗️ [bold]¿Qué es?[/bold] Es un molde de galletas. Define la forma (propiedades) y qué puede hacer (métodos) cada galleta que crees con él.",
     "syntax": "class Molde:\n    # características",
-    "examples": [{"description": "Crear un molde de Coche", "code": "class Coche:\n    ruedas = 4\n\nmi_carro = Coche()"}]
+    "examples": [{"description": "Crear un molde de Coche", "code": "class Coche:\n    ruedas = 4\n\nmi_carro = Coche()"}],
+    "common_errors": [
+      { "error": "Olvidar los paréntesis al crear", "reason": "Escribir mi_carro = Coche en lugar de Coche(). Sin los paréntesis, solo estás referenciando el molde, no creando la galleta." },
+      { "error": "No usar mayúsculas", "reason": "Por convención (PEP 8), las clases deben empezar con Mayúscula (PascalCase) para no confundirlas con variables." }
+    ]
   },
   {
     "name": "self",
     "language": "Python",
-    "description": "🪞 ¿Qué es? Significa 'yo mismo'. Es la forma en que el objeto se mira al espejo para acceder a sus propias cosas.",
+    "description": "🪞 [bold]¿Qué es?[/bold] Significa 'yo mismo'. Es la forma en que el objeto se mira al espejo para acceder a sus propias cosas.",
     "syntax": "self.mi_caracteristica",
-    "examples": [{"description": "Usar self para el nombre", "code": "def __init__(self, nombre):\n    self.nombre = nombre"}]
+    "examples": [{"description": "Usar self para el nombre", "code": "def __init__(self, nombre):\n    self.nombre = nombre"}],
+    "common_errors": [
+      { "error": "Olvidar self en métodos", "reason": "Si defines una función dentro de una clase y no pones 'self' como primer parámetro, Python no sabrá a qué objeto pertenece." },
+      { "error": "Usar self fuera de la clase", "reason": "Intentar usar la palabra 'self' en el código principal. 'self' solo existe y tiene sentido dentro de la construcción del molde." }
+    ]
   }
 ]

@@ -4,13 +4,21 @@
     "name": "dict",
     "description": "📖 [bold]¿Qué es?[/bold] Funciona exactamente como un diccionario real o una agenda. No buscas por número, sino por un 'nombre' (clave) para encontrar su 'significado' (valor).",
     "syntax": "mi_dict = {'clave': 'valor'}",
-    "examples": [{ "description": "Crear un contacto", "code": "usuario = {'nombre': 'Yereiner', 'puntos': 100}\nprint(usuario['nombre'])" }]
+    "examples": [{ "description": "Crear un contacto", "code": "usuario = {'nombre': 'Yereiner', 'puntos': 100}\nprint(usuario['nombre'])" }],
+    "common_errors": [
+      { "error": "KeyError", "reason": "Intentar acceder a una clave que no existe (ej. usuario['edad']). El programa se detendrá si no usas .get()." },
+      { "error": "Claves Duplicadas", "reason": "Si creas un diccionario con dos claves iguales, Python solo conservará la última. La primera se borrará." }
+    ]
   },
   {
     "language": "Python",
     "name": "get",
     "description": "🔍 [bold]¿Qué es?[/bold] Es la forma educada de buscar en un diccionario. Si pides algo que no existe, en lugar de romper el programa, te responde amablemente 'No lo encontré'.",
     "syntax": "diccionario.get('clave', 'mensaje_error')",
-    "examples": [{ "description": "Buscar con seguridad", "code": "precios = {'pan': 10}\nprint(precios.get('leche', 'No hay ese producto'))" }]
+    "examples": [{ "description": "Buscar con seguridad", "code": "precios = {'pan': 10}\nprint(precios.get('leche', 'No hay ese producto'))" }],
+    "common_errors": [
+      { "error": "Confundir con listas", "reason": "Intentar usar .get() en una lista. Este método es exclusivo de los diccionarios." },
+      { "error": "No capturar el None", "reason": "Si no pones un mensaje de error por defecto, .get() devuelve 'None'. Asegúrate de que tu código sepa qué hacer con ese 'Nada'." }
+    ]
   }
 ]

@@ -4,13 +4,19 @@
     "name": "==",
     "description": "⚖️ [bold]¿Qué es?[/bold] Es una pregunta: '¿Esto es igual a aquello?'. No cambia nada, solo te responde True (Sí) o False (No).",
     "syntax": "valor1 == valor2",
-    "examples": [{ "description": "Comparar números", "code": "print(10 == 10) # True\nprint(10 == 5)  # False" }]
+    "examples": [{ "description": "Comparar números", "code": "print(10 == 10) # True\nprint(10 == 5)  # False" }],
+    "common_errors": [
+      { "error": "Usar un solo igual (=)", "reason": "Un solo '=' es para GUARDAR algo en una variable. Para PREGUNTAR si son iguales, siempre debes usar el doble '=='." }
+    ]
   },
   {
     "language": "Python",
     "name": "!=",
     "description": "🚫 [bold]¿Qué es?[/bold] Es lo opuesto al igual. Pregunta: '¿Son diferentes?'. Te dice True si NO se parecen en nada.",
     "syntax": "valor1 != valor2",
-    "examples": [{ "description": "Verificar diferencia", "code": "password = '123'\nprint(password != 'abc') # True" }]
+    "examples": [{ "description": "Verificar diferencia", "code": "password = '123'\nprint(password != 'abc') # True" }],
+    "common_errors": [
+      { "error": "Orden de los símbolos", "reason": "Escribir '=!' en lugar de '!='. Python solo entiende el signo de exclamación primero." }
+    ]
   }
 ]

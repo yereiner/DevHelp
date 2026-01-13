@@ -2,15 +2,23 @@
   {
     "name": "def",
     "language": "Python",
-    "description": "🧑‍🍳 ¿Qué es? Es como escribir una receta. Guardas los pasos una sola vez y los 'cocinas' (llamas) cada vez que tengas hambre de ese código.",
+    "description": "🧑‍🍳 [bold]¿Qué es?[/bold] Es como escribir una receta. Guardas los pasos una sola vez y los 'cocinas' (llamas) cada vez que tengas hambre de ese código.",
     "syntax": "def nombre_receta(ingredientes):\n    # pasos a seguir",
-    "examples": [{"description": "Receta de saludo", "code": "def saludar(nombre):\n    print(f'¡Hola {nombre}!')"}]
+    "examples": [{"description": "Receta de saludo", "code": "def saludar(nombre):\n    print(f'¡Hola {nombre}!')"}],
+    "common_errors": [
+      { "error": "Llamar sin paréntesis", "reason": "Escribir 'saludar' en lugar de 'saludar()'. Si no pones paréntesis, Python no ejecuta la receta, solo te dice que existe." },
+      { "error": "Variables locales", "reason": "Intentar usar una variable creada dentro de la función fuera de ella. Lo que pasa en la cocina, se queda en la cocina." }
+    ]
   },
   {
     "name": "return",
     "language": "Python",
-    "description": "📦 ¿Qué es? Es el resultado final de la receta. La función termina su trabajo y te 'entrega' el paquete.",
+    "description": "📦 [bold]¿Qué es?[/bold] Es el resultado final de la receta. La función termina su trabajo y te 'entrega' el paquete.",
     "syntax": "return resultado",
-    "examples": [{"description": "Entregar una suma", "code": "def sumar(a, b):\n    return a + b"}]
+    "examples": [{"description": "Entregar una suma", "code": "def sumar(a, b):\n    return a + b"}],
+    "common_errors": [
+      { "error": "Código inalcanzable", "reason": "Escribir código después del 'return'. Una vez que la función entrega el paquete, se sale inmediatamente y no lee nada más." },
+      { "error": "Confundir con print()", "reason": "Pensar que 'return' muestra cosas en pantalla. 'return' solo entrega el valor; si quieres verlo, debes hacer un print(funcion())." }
+    ]
   }
 ]

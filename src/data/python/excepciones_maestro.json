@@ -2,8 +2,13 @@
   {
     "name": "try-except",
     "language": "Python",
-    "description": "🩹 ¿Qué es? Es un 'kit de primeros auxilios'. Intentas algo que podría romperse (try) y preparas la venda por si ocurre el accidente (except).",
+    "description": "🩹 [bold]¿Qué es?[/bold] Es un 'kit de primeros auxilios'. Intentas algo que podría romperse (try) y preparas la venda por si ocurre el accidente (except).",
     "syntax": "try:\n    # acción arriesgada\nexcept Error:\n    # plan B",
-    "examples": [{"description": "Manejar división por cero", "code": "try:\n    resultado = 10 / 0\nexcept ZeroDivisionError:\n    print('¡No puedes dividir por cero!')"}]
+    "examples": [{"description": "Manejar división por cero", "code": "try:\n    resultado = 10 / 0\nexcept ZeroDivisionError:\n    print('¡No puedes dividir por cero!')"}],
+    "common_errors": [
+      { "error": "Except vacío", "reason": "Usar 'except:' sin especificar el tipo de error. Esto oculta errores de escritura (typos) y hace que sea imposible debugear." },
+      { "error": "Demasiado código en el try", "reason": "Poner 20 líneas dentro del try. Lo ideal es poner solo la línea que sospechas que va a fallar para saber exactamente qué pasó." },
+      { "error": "Ignorar el error", "reason": "Poner un 'pass' en el except. Si algo falla, el usuario debe saberlo, de lo contrario el programa hará cosas raras después." }
+    ]
   }
 ]

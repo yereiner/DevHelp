@@ -12,20 +12,26 @@
     "name": "print",
     "description": "📢 [bold]¿Qué es?[/bold] Es el megáfono de Python. Sirve para que el programa te hable y te muestre qué está pasando por dentro.",
     "syntax": "print(lo_que_quieres_decir)",
-    "examples": [{ "description": "Saludar al mundo", "code": "print('¡Hola! Estoy aprendiendo Python')" }]
+    "examples": [{ "description": "Saludar al mundo", "code": "print('¡Hola! Estoy aprendiendo Python')" }],
+    "common_errors": [{ "error": "Faltar comillas", "reason": "Si quieres mostrar texto, debe ir entre ' ' o \" \". Sin ellas, Python cree que es una variable." }]
   },
   {
     "language": "Python",
     "name": "len",
     "description": "📏 [bold]¿Qué es?[/bold] Es una cinta métrica. Te dice cuántas letras tiene una palabra o cuántos objetos hay dentro de una lista.",
     "syntax": "len(objeto_a_medir)",
-    "examples": [{ "description": "Contar elementos", "code": "frutas = ['pera', 'uva']\nprint(len(frutas)) # Muestra 2" }]
+    "examples": [{ "description": "Contar elementos", "code": "frutas = ['pera', 'uva']\nprint(len(frutas)) # Muestra 2" }],
+    "common_errors": [{ "error": "Tipos no medibles", "reason": "No puedes usar len() con números (int). Solo con cosas que tengan 'longitud' como listas o textos." }]
   },
   {
     "language": "Python",
     "name": "if",
     "description": "🚦 [bold]¿Qué es?[/bold] Es un semáforo. Si algo es verdad, el código pasa; si no, se detiene o busca otro camino.",
     "syntax": "if condicion:",
-    "examples": [{ "description": "Chequear edad", "code": "edad = 20\nif edad >= 18:\n    print('Es mayor')" }]
+    "examples": [{ "description": "Chequear edad", "code": "edad = 20\nif edad >= 18:\n    print('Es mayor')" }],
+    "common_errors": [
+      { "error": "Olvidar los dos puntos (:)", "reason": "Al igual que en 'def', el semáforo necesita sus dos puntos al final de la condición." },
+      { "error": "Error de Indentación", "reason": "El código que debe ejecutarse si se cumple la condición debe estar 'empujado' 4 espacios a la derecha." }
+    ]
   }
 ]

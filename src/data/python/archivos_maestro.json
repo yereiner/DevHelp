@@ -2,11 +2,16 @@
   {
     "name": "with open",
     "language": "Python",
-    "description": "📂 ¿Qué es? Es como abrir un cajón para leer o guardar papeles. El 'with' asegura que, cuando termines, el cajón se cierre bajo llave automáticamente.",
+    "description": "📂 [bold]¿Qué es?[/bold] Es como abrir un cajón para leer o guardar papeles. El 'with' asegura que, cuando termines, el cajón se cierre bajo llave automáticamente.",
     "syntax": "with open('archivo.txt', 'modo') as f:",
     "parameters": [
-      {"name": "mode", "type": "str", "description": "'r' para leer, 'w' para escribir desde cero.", "optional": true}
+      {"name": "mode", "type": "str", "description": "'r' para leer, 'w' para escribir desde cero (borra lo anterior), 'a' para añadir al final.", "optional": true}
     ],
-    "examples": [{"description": "Guardar un secreto", "code": "with open('secreto.txt', 'w') as f:\n    f.write('¡Aprendiendo Python!')"}]
+    "examples": [{"description": "Guardar un secreto", "code": "with open('secreto.txt', 'w') as f:\n    f.write('¡Aprendiendo Python!')"}],
+    "common_errors": [
+      { "error": "FileNotFoundError", "reason": "Intentar abrir en modo 'r' un archivo que no existe. Verifica que el nombre esté bien escrito." },
+      { "error": "Sobreescritura accidental", "reason": "Usar el modo 'w' borrará todo el contenido previo del archivo. Si quieres agregar texto, usa 'a' (append)." },
+      { "error": "Olvidar el indentado", "reason": "Todo lo que quieras hacer con el archivo debe estar dentro (sangrado) del bloque 'with'." }
+    ]
   }
 ]

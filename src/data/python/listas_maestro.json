@@ -4,20 +4,29 @@
     "name": "list",
     "description": "📦 [bold]¿Qué es?[/bold] Es como una fila de casilleros. Cada casillero tiene un número (índice) y guarda un objeto. Sirve para agrupar datos que tienen algo en común.\n\n⚠️ [bold]Dato importante:[/bold] ¡En Python empezamos a contar desde el 0!",
     "syntax": "mi_lista = [objeto1, objeto2]",
-    "examples": [{ "description": "Crear una lista de frutas", "code": "frutas = ['🍎', '🍌', '🍐']\nprint(frutas[0]) # Muestra la manzana" }]
+    "examples": [{ "description": "Crear una lista de frutas", "code": "frutas = ['🍎', '🍌', '🍐']\nprint(frutas[0]) # Muestra la manzana" }],
+    "common_errors": [
+      { "error": "IndexError", "reason": "Intentar acceder a una posición que no existe. Si la lista tiene 3 cosas, el último índice es 2. ¡No olvides que empezamos en 0!" }
+    ]
   },
   {
     "language": "Python",
     "name": "append",
     "description": "➕ [bold]¿Qué es?[/bold] Imagina que llega un nuevo vagón al final de un tren. 'Append' sirve para meter un nuevo dato al final de tu lista sin borrar los que ya estaban.",
     "syntax": "lista.append(nuevo_dato)",
-    "examples": [{ "description": "Añadir a la lista", "code": "tareas = ['Lavar']\ntareas.append('Cocinar')\nprint(tareas) # ['Lavar', 'Cocinar']" }]
+    "examples": [{ "description": "Añadir a la lista", "code": "tareas = ['Lavar']\ntareas.append('Cocinar')\nprint(tareas) # ['Lavar', 'Cocinar']" }],
+    "common_errors": [
+      { "error": "None al asignar", "reason": "Escribir nueva = lista.append('x'). append() modifica la lista original y no devuelve nada. Tu variable 'nueva' quedará vacía (None)." }
+    ]
   },
   {
     "language": "Python",
     "name": "pop",
     "description": "📤 [bold]¿Qué es?[/bold] Es como sacar la última galleta del paquete. Quita el último elemento de la lista y te lo entrega para que lo uses.",
     "syntax": "lista.pop()",
-    "examples": [{ "description": "Sacar el último elemento", "code": "numeros = [1, 2, 3]\nultimo = numeros.pop()\nprint(ultimo) # 3\nprint(numeros) # [1, 2]" }]
+    "examples": [{ "description": "Sacar el último elemento", "code": "numeros = [1, 2, 3]\nultimo = numeros.pop()\nprint(ultimo) # 3\nprint(numeros) # [1, 2]" }],
+    "common_errors": [
+      { "error": "Lista vacía", "reason": "Usar .pop() en una lista que no tiene nada. Python no puede sacar galletas de un paquete vacío." }
+    ]
   }
 ]

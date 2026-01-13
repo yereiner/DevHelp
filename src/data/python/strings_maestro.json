@@ -4,20 +4,30 @@
     "name": "split",
     "description": "✂️ [bold]¿Qué es?[/bold] Imagina que tienes una oración y quieres separar cada palabra. Es como usar unas tijeras para cortar un texto cada vez que encuentre un espacio o una coma.",
     "syntax": "texto.split('separador')",
-    "examples": [{ "description": "Separar palabras", "code": "frase = 'Hola Mundo'\npalabras = frase.split(' ')\nprint(palabras) # ['Hola', 'Mundo']" }]
+    "examples": [{ "description": "Separar palabras", "code": "frase = 'Hola Mundo'\npalabras = frase.split(' ')\nprint(palabras) # ['Hola', 'Mundo']" }],
+    "common_errors": [
+      { "error": "Separador incorrecto", "reason": "Si intentas separar por una coma (',') un texto que solo tiene espacios, el split te devolverá el texto completo en una lista de un solo elemento." }
+    ]
   },
   {
     "language": "Python",
     "name": "upper",
     "description": "📢 [bold]¿Qué es?[/bold] ¡Es el botón de gritar! Convierte todas las letras de un texto a MAYÚSCULAS.",
     "syntax": "texto.upper()",
-    "examples": [{ "description": "Convertir a mayúsculas", "code": "nombre = 'yereiner'\nprint(nombre.upper()) # YEREINER" }]
+    "examples": [{ "description": "Convertir a mayúsculas", "code": "nombre = 'yereiner'\nprint(nombre.upper()) # YEREINER" }],
+    "common_errors": [
+      { "error": "Inmutabilidad", "reason": "Escribir solo 'texto.upper()' no cambia la variable original. Debes guardar el resultado: 'texto = texto.upper()'." }
+    ]
   },
   {
     "language": "Python",
     "name": "join",
     "description": "🔗 [bold]¿Qué es?[/bold] Es el pegamento de los textos. Toma una lista de palabras y las une todas en una sola frase usando el símbolo que tú elijas.",
     "syntax": "'pegamento'.join(lista)",
-    "examples": [{ "description": "Unir con guiones", "code": "partes = ['2026', '01', '12']\nfecha = '-'.join(partes)\nprint(fecha) # 2026-01-12" }]
+    "examples": [{ "description": "Unir con guiones", "code": "partes = ['2026', '01', '12']\nfecha = '-'.join(partes)\nprint(fecha) # 2026-01-12" }],
+    "common_errors": [
+      { "error": "Lista con números", "reason": "join() solo pega textos. Si tu lista tiene números, fallará. Primero debes convertirlos a texto con str()." },
+      { "error": "Orden invertido", "reason": "Es 'pegamento'.join(lista), no lista.join('pegamento'). ¡El pegamento va primero!" }
+    ]
   }
 ]
