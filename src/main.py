@@ -25,9 +25,9 @@ def main():
     # 2. Lógica para listar todos los temas disponibles (--all)
     if args.all:
         terminos = listar_terminos()
-        print("\n" + "="*40)
-        print(" 📚 TEMAS DISPONIBLES EN TU BETA ")
-        print("="*40)
+        print("\n" + "="*80)
+        print(" 📚 TEMAS DISPONIBLES DE LA 1.0 (TRABAJAMOS PARA TRAERTE NUEVAS FUNCIONES) ")
+        print("="*80)
         
         # Mostramos los términos organizados en 3 columnas
         for i in range(0, len(terminos), 3):
@@ -35,7 +35,7 @@ def main():
             linea = "  ".join(f"• {t:<12}" for t in grupo)
             print(f" {linea}")
             
-        print("="*40)
+        print("="*80)
         print(f" Total: {len(terminos)} maestros cargados.\n")
         return
 
